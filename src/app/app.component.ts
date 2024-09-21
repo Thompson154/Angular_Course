@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+
+interface IPerson {
+  name:string
+  lastname: string
+  age?:number
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,11 +18,29 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title: number = 10;
 
+  animals:string[] = ['a','b','c','d','e','f','g']
+
   // const a;
   // let a;
 
+  person: IPerson = {
+    name: 'a',
+    lastname: 'b'
+  }
+
   constructor(){
     console.log('substract', this.substract(18,4))
+
+    console.log('MAP:', this.animals.map( (animal) => (animal + 'new')))
+    console.log('FOREACH:', this.animals.forEach( (animal) => (animal + 'new')))
+    console.log('FIND:', this.animals.find( (animal) => (animal === 'b')))
+    console.log('FILTER:', this.animals.filter( (animal) => (animal === 'b')))
+    console.log('INDEXOF:', this.animals.indexOf('z'))
+
+    //Operadores para menejar arrays en JavaScript
+
+
+
   }
 
   public sum(num1:number,num2:number): number {
