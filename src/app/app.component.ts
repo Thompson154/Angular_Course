@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { reduce } from 'rxjs';
+import { UserCardComponent } from './user-card/user-card.component';
+
 
 
 interface IPerson {
@@ -12,7 +13,7 @@ interface IPerson {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, UserCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -31,7 +32,10 @@ export class AppComponent {
   }
 
   students:number[] = [1,2,3,4,5,6]
-  parents:number[] = [7,8,9,10] 
+  parents:number[] = [7,8,9,10]
+  var1 = 0
+  var2 = null
+  var3 = 'hola' 
   
   constructor(){
     const { name, age } = this.person
@@ -42,6 +46,9 @@ export class AppComponent {
     console.log('spreed operator: ',both)
 
     console.log('REST operator:', this.sum2(2,4,6))
+    console.log('Nullish Coalescing:', this.var2 ?? this.var3) 
+    console.log('OR', this.var2 || this.var1)
+
 
     console.log('substract', this.substract(18,4))
 
