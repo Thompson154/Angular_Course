@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { reduce } from 'rxjs';
 
 
 interface IPerson {
@@ -24,11 +25,24 @@ export class AppComponent {
   // let a;
 
   person: IPerson = {
-    name: 'a',
-    lastname: 'b'
+    name: 'Juan',
+    lastname: 'Perez',
+    age: 25
   }
 
+  students:number[] = [1,2,3,4,5,6]
+  parents:number[] = [7,8,9,10] 
+  
   constructor(){
+    const { name, age } = this.person
+    console.log('desestruturacion', name, age)
+    
+    //spreedOperator
+    let both = [...this.students, ...this.parents]
+    console.log('spreed operator: ',both)
+
+    console.log('REST operator:', this.sum2(2,4,6))
+
     console.log('substract', this.substract(18,4))
 
     console.log('MAP:', this.animals.map( (animal) => (animal + 'new')))
@@ -41,6 +55,11 @@ export class AppComponent {
 
 
 
+  }
+
+  public sum2(...persons:number[]){
+    //return persons[0] + persons[1]
+    return persons.reduce((acumulador,valorActual)=> (acumulador+ valorActual),10)
   }
 
   public sum(num1:number,num2:number): number {
