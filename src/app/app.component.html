@@ -4,4 +4,8 @@
 <p>Pair {{ onlyPair() }}</p>
 <!-- <p>Substract {{Substract(4,8)}}</p> -->
 
-<app-user-card [name]="'hoal'" [email]="'hola'"></app-user-card>
+<app-user-card
+  [name]="'Adrian Thompson'"
+  [email]="'thompsonadrian210@gmail.com'"
+  (sendData)="receiveData($event)"
+></app-user-card>
