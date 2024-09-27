@@ -1,0 +1,36 @@
+.calculator_container {
+  border: 5px solid blueviolet;
+  border-radius: 25px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.calculator_buttons_container {
+  flex-direction: row;
+  border: 1px solid green;
+  border-radius: 15px;
+  padding: 5px;
+  margin-top: 10px;
+
+  .mul {
+    background-color: aqua;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 5px;
+  }
+  .sum {
+    background-color: greenyellow;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 5px;
+  }
+  .reset {
+    background-color: chocolate;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 5px;
+  }
+}

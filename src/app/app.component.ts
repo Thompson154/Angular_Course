@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserCardComponent } from './user-card/user-card.component';
+import { CalculatorComponentComponent } from './calculator-component/calculator-component.component';
+import { HistoryComponentComponent } from './history-component/history-component.component';
 
 
 
@@ -13,12 +15,16 @@ interface IPerson {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserCardComponent],
+  imports: [RouterOutlet, UserCardComponent, CalculatorComponentComponent, HistoryComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title: number = 10;
+
+  result:number = 0;
+  history: string[] = [];
+  maxHistory: number = 5;
 
   animals:string[] = ['a','b','c','d','e','f','g']
 
@@ -95,5 +101,15 @@ export class AppComponent {
 
   public receiveData(data:any){
     console.log('Print in father component: ', data)
+  }
+
+  
+  public onResult(event: any,operation: string){
+    console.log('event from child: ', event)
+    this.result = event ?? 0;
+    this.history.push(`${operation}: ${event}`);
+    if (this.history.length > this.maxHistory) {
+      this.history.shift();
+    }
   }
 }

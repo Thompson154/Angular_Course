@@ -1,11 +1,24 @@
-<h1>Hello, {{ title + 2 }}</h1>
-<p>Add {{ sum(4, 1) }}</p>
-<p>For {{ getArray() }}</p>
-<p>Pair {{ onlyPair() }}</p>
-<!-- <p>Substract {{Substract(4,8)}}</p> -->
+<div class="app_container">
+  <p>App COMPONENT</p>
+  <!-- <h1>Hello, {{ title + 2 }}</h1>
+  <p>Add {{ sum(4, 1) }}</p>
+  <p>For {{ getArray() }}</p>
+  <p>Pair {{ onlyPair() }}</p> -->
+  <!-- <p>Substract {{Substract(4,8)}}</p> -->
 
-<app-user-card
-  [name]="'Adrian Thompson'"
-  [email]="'thompsonadrian210@gmail.com'"
-  (sendData)="receiveData($event)"
-></app-user-card>
+  <!-- <app-user-card
+    [name]="'Adrian Thompson'"
+    [email]="'thompsonadrian210@gmail.com'"
+    (sendData)="receiveData($event)"
+  ></app-user-card> -->
+  <p>RESULT: {{ result }}</p>
+  <div class="app_container_calcuAndHistory">
+    <calculator
+      (sum)="onResult($event, 'Sum')"
+      (mul)="onResult($event, 'Multi')"
+      (reset)="onResult($event, 'Reset')"
+    >
+    </calculator>
+    <history [operations]="history"></history>
+  </div>
+</div>

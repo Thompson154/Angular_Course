@@ -1,0 +1,10 @@
+<div class="calculator_container">
+  <p>Calculator-component</p>
+  <input type="text" [(ngModel)]="box1Value" />
+  <input type="text" [(ngModel)]="box2Value" />
+  <div class="calculator_buttons_container">
+    <button class="sum" (click)="onSendSum()">Sum</button>
+    <button class="mul" (click)="onSendMulti()">Mul</button>
+    <button class="reset" (click)="onSendReset()">Reset</button>
+  </div>
+</div>
