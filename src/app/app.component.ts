@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { UserCardComponent } from './user-card/user-card.component';
 import { CalculatorComponentComponent } from './calculator-component/calculator-component.component';
 import { HistoryComponentComponent } from './history-component/history-component.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -15,7 +16,7 @@ interface IPerson {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserCardComponent, CalculatorComponentComponent, HistoryComponentComponent],
+  imports: [RouterOutlet, UserCardComponent, CalculatorComponentComponent, HistoryComponentComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
