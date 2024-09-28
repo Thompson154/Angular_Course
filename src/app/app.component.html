@@ -25,9 +25,37 @@
     <history [operations]="history"></history>
   </div>
 
-  <p *ngIf="1 === 1">variables are equals</p>
+  <p *ngIf="1 == 1; else elseOld">variables are equals</p>
 
-  @if(1===1){
+  <ng-template #elseOld>
+    <p>old, result is false</p>
+  </ng-template>
+
+  @if(var1===1){
   <p>newSyntax, variable XD</p>
+  } @else {
+  <p>newSyntax, result is false</p>
   }
+
+  <p *ngFor="let item of ['a', 'b', 'c', 'd']; let i = index">
+    old for, value: {{ item }}, index: {{ i }}
+  </p>
+
+  @for (item of ['a', 'b', 'c', 'd']; track item; let i=$index) {
+  <p>old for, value: {{ item }}, index: {{ i }}</p>
+  }
+
+  <div [ngSwitch]="var1">
+    <p *ngSwitchCase="0">var is 0</p>
+    <p *ngSwitchCase="1">var is 1</p>
+    <p *ngSwitchDefault="0">default value</p>
+  </div>
+
+  @switch (var1) { @case (0) {
+  <p>NewSyntax,var is 0</p>
+  } @case (1) {
+  <p>NewSyntact,var is 1</p>
+  } @default {
+  <p>new syntaxt, default value</p>
+  } }
 </div>
