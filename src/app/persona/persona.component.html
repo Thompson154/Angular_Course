@@ -1,0 +1,10 @@
+<div class="persona_container">
+    <p>Gender: {{ person.gender }}</p>
+    <p>Name: {{ person.name }}</p>
+    <p>Age: {{ person.age }}</p>
+    
+    <div class="discount" *ngIf="showDiscount">
+      <p>Discount available</p>
+    </div>
+  </div>
+  

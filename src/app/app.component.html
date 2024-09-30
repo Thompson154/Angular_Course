@@ -1,12 +1,12 @@
+<p>App COMPONENT</p>
 <div class="app_container">
-  <p>App COMPONENT</p>
   <!-- <h1>Hello, {{ title + 2 }}</h1>
   <p>Add {{ sum(4, 1) }}</p>
   <p>For {{ getArray() }}</p>
   <p>Pair {{ onlyPair() }}</p> -->
   <!-- <p>Substract {{Substract(4,8)}}</p> -->
 
-  <app-user-card
+  <!-- <app-user-card
     [name]="'Adrian Thompson'"
     [email]="'thompsonadrian210@gmail.com'"
     (sendData)="receiveData($event)"
@@ -42,12 +42,12 @@
   </p>
 
   @for (item of ['a', 'b', 'c', 'd']; track item; let i=$index) {
-  <p>old for, value: {{ item }}, index: {{ i }}</p>
+  <p>newSyntax for, value: {{ item }}, index: {{ i }}</p>
   }
 
   <div [ngSwitch]="var1">
-    <p *ngSwitchCase="0">var is 0</p>
-    <p *ngSwitchCase="1">var is 1</p>
+    <p *ngSwitchCase="0">oldSyntax, var is 0</p>
+    <p *ngSwitchCase="1">oldSyntax, var is 1</p>
     <p *ngSwitchDefault="0">default value</p>
   </div>
 
@@ -57,5 +57,15 @@
   <p>NewSyntact,var is 1</p>
   } @default {
   <p>new syntaxt, default value</p>
-  } }
+  } } -->
+  
+  <div class="datos_container">
+    <p>Total Females: {{ totalFemales }}</p>
+    <p>Total Males: {{ totalMales }}</p>
+    <p>Persons with discount: {{ totalDiscounts }}</p>
+    <button class="button" (click)="deleteDiscountedPersons()">Borrar personas con descuento</button>
+  </div>
+  <div *ngFor="let person of persons" class="datos_container">
+    <app-persona [person]="person"></app-persona>
+  </div>
 </div>
