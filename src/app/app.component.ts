@@ -21,6 +21,9 @@ interface IPerson {
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+
+  userCardCreated: boolean = true
+
   // title: number = 10;
 
   // result:number = 0;
@@ -113,26 +116,27 @@ export class AppComponent {
   //     this.history.shift();
   //   }
   // }
-  persons: IPerson[] = [
-    { gender: 'male', name: 'John', age: 22 },
-    { gender: 'female', name: 'Jane', age: 17 },
-    { gender: 'male', name: 'Mike', age: 19 },
-    { gender: 'female', name: 'Anna', age: 20 }
-  ];
+  // persons: IPerson[] = [
+  //   { gender: 'male', name: 'John', age: 22 },
+  //   { gender: 'female', name: 'Jane', age: 17 },
+  //   { gender: 'male', name: 'Mike', age: 19 },
+  //   { gender: 'female', name: 'Anna', age: 20 }
+  // ];
 
-  get totalFemales(): number {
-    return this.persons.filter(person => person.gender === 'female').length;
-  }
+  // get totalFemales(): number {
+  //   return this.persons.filter(person => person.gender === 'female').length;
+  // }
 
-  get totalMales(): number {
-    return this.persons.filter(person => person.gender === 'male').length;
-  }
+  // get totalMales(): number {
+  //   return this.persons.filter(person => person.gender === 'male').length;
+  // }
 
-  get totalDiscounts(): number {
-    return this.persons.filter(person => person.age > 18).length;
-  }
+  // get totalDiscounts(): number {
+  //   return this.persons.filter(person => person.age > 18).length;
+  // }
 
-  deleteDiscountedPersons() {
-    this.persons = this.persons.filter(person => person.age <= 18);
-  }
+  // deleteDiscountedPersons() {
+  //   this.persons = this.persons.filter(person => person.age <= 18);
+  // }
+
 }

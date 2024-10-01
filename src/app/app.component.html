@@ -58,8 +58,8 @@
   } @default {
   <p>new syntaxt, default value</p>
   } } -->
-  
-  <div class="datos_container">
+
+  <!-- <div class="datos_container">
     <p>Total Females: {{ totalFemales }}</p>
     <p>Total Males: {{ totalMales }}</p>
     <p>Persons with discount: {{ totalDiscounts }}</p>
@@ -67,5 +67,14 @@
   </div>
   <div *ngFor="let person of persons" class="datos_container">
     <app-persona [person]="person"></app-persona>
-  </div>
+  </div> -->
+
+  <button (click)="userCardCreated = !userCardCreated">
+    create and destroy user card
+  </button>
+  @if (userCardCreated) {
+  <app-user-card> </app-user-card>
+  } @else {
+  <p>user card destroy</p>
+  }
 </div>
