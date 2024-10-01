@@ -21,7 +21,8 @@ interface IPerson {
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-
+  users = [{name: 'abc', 'email':'abc@gmail.com'},{name: 'asd', 'email':'asd@gmail.com'}]
+  selectedUser: any = this.users[0];
   userCardCreated: boolean = true
 
   // title: number = 10;
