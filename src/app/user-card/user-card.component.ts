@@ -1,14 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { AfterContentInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
 })
-export class UserCardComponent implements OnInit, OnDestroy, OnChanges {
+export class UserCardComponent implements OnInit, OnDestroy, OnChanges, DoCheck, AfterContentInit{
   @Input() name: string = '';
   @Input() email: string = '';
 
@@ -36,9 +37,18 @@ export class UserCardComponent implements OnInit, OnDestroy, OnChanges {
     this.password = changes['name'].currentValue + changes['email'].currentValue + 'PASSWORD'
   }
 
+  ngDoCheck(): void {
+    console.log("DO CHECK user card")
+  }
+
+  ngAfterContentInit(): void { // solo para confirmar que el contenido
+    console.log("NG AFTER CONTENT INIT")
+  }
+
   public onSendData() {
     this.sendData.emit("Hi, Adri_154, I'm a child XD");
   }
+
 
 
 }
