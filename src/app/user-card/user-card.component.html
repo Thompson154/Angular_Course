@@ -5,7 +5,12 @@
 
 
   <input type="text" [(ngModel)]="password">
-  <button class="button-user-card" (click)="onSendData()"> send Data</button>
+
+  @if (showButton) {
+    <button class="button-user-card" #buttonTest (click)="onSendData()"> send Data</button>
+  } @else {
+    <p>it is false</p>>
+  }
 
   <p>PASSWORD: {{password}}</p>
 
