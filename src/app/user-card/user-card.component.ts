@@ -37,8 +37,8 @@ export class UserCardComponent
 
   @Output() sendData = new EventEmitter(true);
 
-  @ViewChild("buttonTest", {static: true}) buttonTest!: ElementRef // el ! es para no inicializar, lo haremos mas adelante
-
+  @ViewChild("buttonTest", {static: false}) buttonTest!: ElementRef // el ! es para no inicializar, lo haremos mas adelante
+  @ViewChild("buttonShow", {static: true}) buttonShow!: ElementRef //investigar el static: true/false
   password: string = '';
   showButton:boolean = false
 
@@ -48,6 +48,9 @@ export class UserCardComponent
   ngOnInit(): void {
     console.log('User card OnInt');
     this.password = this.name + this.email + ' PASSWORD';
+
+    this.buttonShow.nativeElement.textContent = 'button Show in OnInit'
+    this.buttonTest.nativeElement.textContent = 'button Test in OnInit'
   }
 
   ngOnDestroy(): void {
@@ -68,13 +71,17 @@ export class UserCardComponent
   ngAfterContentInit(): void {
     // solo para confirmar que el contenido
     console.log('NG AFTER CONTENT INIT');
-  }
 
-  ngAfterViewInit(): void {
+  }
+  
+  ngAfterViewInit(): void { // mas para google maps, investigar
     console.log("NG AFTER VIEW INIT")
     console.log("NG AFTER VIEW INIT",this.buttonTest)
-    this.buttonTest.nativeElement.textContent = "aaaaaaaaaa"
-
+    // this.buttonTest.nativeElement.textContent = "aaaaaaaaaa"
+    
+    if(this.buttonTest){
+      this.buttonTest.nativeElement.textContent = "Button Test in ngAfterViewInit"
+    }
   }
 
   public onSendData() {
