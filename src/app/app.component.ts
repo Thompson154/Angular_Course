@@ -5,6 +5,7 @@ import { UserCardComponent } from './user-card/user-card.component';
 import { CalculatorComponentComponent } from './calculator-component/calculator-component.component';
 import { HistoryComponentComponent } from './history-component/history-component.component';
 import { CommonModule } from '@angular/common';
+import { CounterComponent } from './counter/counter.component';
 
 
 interface IPerson {

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import {
   AfterContentChecked,
   AfterContentInit,
+  AfterRenderRef,
   AfterViewChecked,
   AfterViewInit,
   Component,
@@ -17,11 +18,12 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CounterComponent } from '../counter/counter.component';
 
 @Component({
   selector: 'app-user-card',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,CounterComponent],
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
 })
