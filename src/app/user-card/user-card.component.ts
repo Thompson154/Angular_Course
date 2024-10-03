@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import {
+  AfterContentChecked,
   AfterContentInit,
+  AfterViewChecked,
   AfterViewInit,
   Component,
   DoCheck,
@@ -30,7 +32,9 @@ export class UserCardComponent
     OnChanges,
     DoCheck,
     AfterContentInit,
-    AfterViewInit
+    AfterViewInit,
+    AfterContentChecked,
+    AfterViewChecked
 {
   @Input() name: string = '';
   @Input() email: string = '';
@@ -73,6 +77,10 @@ export class UserCardComponent
     console.log('NG AFTER CONTENT INIT');
 
   }
+
+  ngAfterContentChecked(): void {
+    console.log("NG AFTER CONTENT CHECK")  
+  }
   
   ngAfterViewInit(): void { // mas para google maps, investigar
     console.log("NG AFTER VIEW INIT")
@@ -83,6 +91,11 @@ export class UserCardComponent
       this.buttonTest.nativeElement.textContent = "Button Test in ngAfterViewInit"
     }
   }
+
+  ngAfterViewChecked(): void {
+    console.log("NG AFTER VIEW CHECKED")
+  }
+
 
   public onSendData() {
     this.sendData.emit("Hi, Adri_154, I'm a child XD");
