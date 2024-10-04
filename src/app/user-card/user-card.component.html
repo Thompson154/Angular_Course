@@ -1,26 +1,26 @@
-<div class="user-card">
+<div
+  [ngClass]="{
+  'user-card': password === '123',
+  'user-card-black': password === 'hola'
+}"
+>
   <p>USER CARD COMPONENT</p>
   <p>INPUT NAME: {{ name }}</p>
   <p>INPUT EMAIL: {{ email }}</p>
 
-
-  <input type="text" [(ngModel)]="password">
+  <input type="text" [(ngModel)]="password" />
 
   <button #buttonShow (click)="showButton = !showButton">show button</button>
 
   @if (showButton) {
-    <button class="button-user-card" #buttonTest (click)="onSendData()"> send Data</button>
+  <button class="button-user-card" #buttonTest (click)="onSendData()">
+    send Data
+  </button>
   } @else {
-    <p>it is false</p>>
-  }
-
-
-
-  <p>PASSWORD: {{password}}</p>
-
-
+  <p>it is false</p>
+  > }
+  <p>PASSWORD: {{ password }}</p>
   <ng-content></ng-content>
-  
 
   <!-- <app-counter></app-counter> -->
 </div>
