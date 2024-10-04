@@ -17,7 +17,7 @@ interface IPerson {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserCardComponent, CalculatorComponentComponent, HistoryComponentComponent, CommonModule, PersonaComponent],
+  imports: [RouterOutlet, UserCardComponent, CalculatorComponentComponent, HistoryComponentComponent, CommonModule, PersonaComponent, CounterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -45,9 +45,9 @@ export class AppComponent {
 
   // students:number[] = [1,2,3,4,5,6]
   // parents:number[] = [7,8,9,10]
-  // var1 = 0
-  // var2 = null
-  // var3 = 'hola' 
+    var1 = 0
+    var2 = null
+    var3 = 'hola' 
   
   // constructor(){
   //   const { name, age } = this.person

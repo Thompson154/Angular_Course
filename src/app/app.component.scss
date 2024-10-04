@@ -1,24 +1,23 @@
 .app_container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 20px;
-    gap: 20px; /* Añadir espacio entre las secciones */
+    gap: 10px; 
   }
   
   .datos_container {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Añadir espacio entre los elementos */
+    gap: 15px; 
   
     .female, .male, .mayor18, .discount {
-      height: 40px; /* Aumentar altura para que sean más visibles */
+      height: 40px; 
       width: 300px;
       background-color: goldenrod;
       border: 1px solid black;
       border-radius: 10px;
-      padding: 10px; /* Reducir padding */
+      padding: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,7 +39,7 @@
     transition: background-color 0.3s ease;
   
     &:hover {
-      background-color: darkgoldenrod; /* Añadir efecto hover */
+      background-color: darkgoldenrod;
     }
   }
   
