@@ -14,6 +14,11 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    AlertComponent,
+    CardComponent,
+    NavbarComponent
   ]
 })
-export class SharedModuleModule { }
+export class SharedModule { }
