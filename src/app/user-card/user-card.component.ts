@@ -57,7 +57,7 @@ export class UserCardComponent
     this.password = this.name + this.email + ' PASSWORD';
 
     this.buttonShow.nativeElement.textContent = 'button Show in OnInit'
-    this.buttonTest.nativeElement.textContent = 'button Test in OnInit'
+    // this.buttonTest.nativeElement.textContent = 'button Test in OnInit'
   }
 
   ngOnDestroy(): void {
