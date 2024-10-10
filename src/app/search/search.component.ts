@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -12,11 +12,12 @@ import { FormsModule } from '@angular/forms';
 
 export class SearchComponent {
 
-  searchQuery: string = '';
+  searchQuery: string = ''; 
+  searchType: string = 'all'; 
+
+  @Output() search = new EventEmitter<{ query: string; type: string }>();
 
   onSearch() {
-    if (this.searchQuery.trim()) {
-      console.log('Searching for:', this.searchQuery);
-    }
+    this.search.emit({ query: this.searchQuery, type: this.searchType });
   }
 }

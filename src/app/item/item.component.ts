@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-item',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './item.component.html',
-  styleUrl: './item.component.scss'
+  styleUrl: './item.component.scss',
 })
 export class ItemComponent {
+  @Input() person: any;
+  @Output() onDelete = new EventEmitter<void>();
+  @Output() onShow = new EventEmitter<any>();
 
+  deleteItem() {
+    this.onDelete.emit();
+  }
+
+  showDetails() {
+    this.onShow.emit(this.person);
+  }
 }

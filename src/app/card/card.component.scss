@@ -1,0 +1,54 @@
+.containerCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width: 430px;
+    background-color: cornflowerblue;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.Geographic {
+    padding: 20px;
+    height: 300px;
+    width: 430px;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.Messages {
+    padding: 10px;
+    height: 300px;
+    width: 430px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Geographic {
+    background-color: burlywood;
+}
+
+.Messages {
+    background-color: coral;
+}
+
+.buttonPersonal {
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+}
+
+.buttonGeographic {
+    background-color: burlywood;
+    border-color: burlywood;
+}
+
+.buttonMessages {
+    background-color: coral;
+    border-color: coral;
+}

@@ -1,0 +1,19 @@
+.itemContainer {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    height: 40px;
+    margin: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.button {
+    height: 20px;
+    width: 50px;
+}
+

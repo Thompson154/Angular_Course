@@ -1,1 +1,6 @@
-<p>item works!</p>
+<div class="itemContainer">
+    <p>{{ person.name }} {{ person.lastName }}</p>
+    <p>{{ person.type | titlecase }}</p>
+  <button class="button" (click)="showDetails()">Show</button>
+  <button class="button" (click)="deleteItem()">Delete</button>
+</div>

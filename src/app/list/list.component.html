@@ -1,1 +1,6 @@
-<p>list works!</p>
+<div class="containerList">
+    <app-item *ngFor="let person of filteredPeople of people; let i = index" 
+              [person]="person" 
+              (onDelete)="handleDelete(i)">
+    </app-item>
+  </div>

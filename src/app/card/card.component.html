@@ -1,1 +1,37 @@
-<p>card works!</p>
+<div>
+  <button class="buttonPersonal" (click)="showSection('personal')">
+    Personal
+  </button>
+  <button class="buttonGeographic" (click)="showSection('geographic')">
+    Geographic
+  </button>
+  <button class="buttonMessages" (click)="showSection('messages')">
+    Messages
+  </button>
+
+  <div class="containerCard" *ngIf="selectedSection === 'personal'">
+    <p>Name: {{ selectedPerson?.name }}</p>
+    <p>Last Name: {{ selectedPerson?.lastName }}</p>
+    <p>Type: {{ selectedPerson?.type | titlecase }}</p>
+    <p *ngIf="selectedPerson?.type === 'student'">
+      Score: {{ selectedPerson?.firstTestScore }}
+    </p>
+    <p *ngIf="selectedPerson?.type === 'professor'">
+      Subject: {{ selectedPerson?.subject }}
+    </p>
+  </div>
+
+  <div class="Geographic" *ngIf="selectedSection === 'geographic'">
+    <p>
+      Address: {{ selectedPerson?.address.number }}
+      {{ selectedPerson?.address.street }}
+    </p>
+    <p>Country: {{ selectedPerson?.country }}</p>
+    <p>Province: {{ selectedPerson?.province }}</p>
+  </div>
+
+  <div class="Messages" *ngIf="selectedSection === 'messages'">
+    <app-search></app-search>
+    <app-item></app-item>
+  </div>
+</div>
