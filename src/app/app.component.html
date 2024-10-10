@@ -1,6 +1,6 @@
 <div class="containerApp">
   <app-search></app-search>
-  <app-list #itemList></app-list>
+  <app-list #itemList (onShowDetails)="personDetails($event)"></app-list>
 </div>
 <div>
   <app-card [selectedPerson]="selectedPerson"></app-card>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter,Output } from '@angular/core';
 import { ItemComponent } from '../item/item.component';
 import { data } from '../../../data';
 import { CommonModule } from '@angular/common';
@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
+
+    @Output() onShowDetails = new EventEmitter<any>();
 
     people: any[] = []; 
     filteredPeople: any[] = []; 
@@ -39,6 +41,10 @@ export class ListComponent {
       if (this.people.length === 0) {
         this.filteredPeople = [];
       }
+    }
+
+    handleShowDetails(person: any) {
+      this.onShowDetails.emit(person);
     }
   
     onSearch(searchData: { query: string; type: string }) {

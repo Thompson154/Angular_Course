@@ -11,13 +11,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ItemComponent {
   @Input() person: any;
   @Output() onDelete = new EventEmitter<void>();
-  @Output() onShow = new EventEmitter<any>();
+  @Output() onShowDetails = new EventEmitter<any>(); 
 
   deleteItem() {
     this.onDelete.emit();
   }
 
   showDetails() {
-    this.onShow.emit(this.person);
+    this.onShowDetails.emit(this.person);
   }
 }
